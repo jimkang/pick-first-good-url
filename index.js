@@ -16,7 +16,11 @@ function pickFirstGoodURL(opts, pickingDone) {
   async.some(urls, urlRespondsWithGoodStatusCode, passBackGoodURL);
 
   function urlRespondsWithGoodStatusCode(url, done) {
-    request(url, checkResponse);
+    var requestOpts = {
+      url: url,
+      encoding: null
+    };
+    request(requestOpts, checkResponse);
 
     function checkResponse(error, response) {
       if (error || response.statusCode !== 200) {
