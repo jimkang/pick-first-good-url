@@ -16,7 +16,8 @@ var testCases = [
         'http://hahacats.com/wp-content/uploads/Corporate-Fatcat-iz-keepin-teh-bonus.jpg',
         'http://www.picgifs.com/graphics/r/rubiks-cube/animaatjes-rubiks-cube-7217468.gif'
       ],
-      responseChecker: isImageMIMEType
+      responseChecker: isImageMIMEType,
+      encoding: null
     },
     expected: {
       url: 'http://www.picgifs.com/graphics/r/rubiks-cube/animaatjes-rubiks-cube-7217468.gif'

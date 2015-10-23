@@ -4,10 +4,14 @@ var request = require('request');
 function pickFirstGoodURL(opts, pickingDone) {
   var URLs;
   var responseChecker;
+  var encoding = 'utf8';
 
   if (opts) {
     urls = opts.urls;
-    responseChecker = opts.responseChecker;    
+    responseChecker = opts.responseChecker;
+    if (opts.encoding !== undefined) {
+      encoding = opts.encoding;
+    }
   }
 
   var goodURL;
@@ -18,7 +22,7 @@ function pickFirstGoodURL(opts, pickingDone) {
   function urlRespondsWithGoodStatusCode(url, done) {
     var requestOpts = {
       url: url,
-      encoding: null
+      encoding: encoding
     };
     request(requestOpts, checkResponse);
 
