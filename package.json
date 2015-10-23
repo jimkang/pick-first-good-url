@@ -1,6 +1,6 @@
 {
   "name": "pick-first-good-url",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Passes back the first good URL in the list, where good means it responds with status code 200 and fulfills the optional user criteria.",
   "main": "index.js",
   "scripts": {
